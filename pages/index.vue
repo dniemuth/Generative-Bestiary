@@ -1,12 +1,7 @@
 <template>
   <ion-split-pane when="md" content-id="main">
     <ion-menu content-id="main">
-      <ion-header>
-        <ion-toolbar color="primary">
-          <ion-title>Menu</ion-title>
-        </ion-toolbar>
-      </ion-header>
-      <ion-content class="ion-padding"> Menu Content </ion-content>
+      <StatBlockForm :challengeRatings="CHALLENGE_RATINGS" :sizes="SIZES" :types="CREATURE_TYPES" />
     </ion-menu>
 
     <div class="ion-page" id="main">
@@ -19,13 +14,15 @@
         </ion-toolbar>
       </ion-header>
       <ion-content class="ion-padding">
-        Main View Content
-        <div>{{ data }}</div>
+        <StatBlock />
       </ion-content>
     </div>
   </ion-split-pane>
 </template>
 
 <script setup lang="ts">
+import StatBlockForm from '../components/StatBlockForm.vue';
+import StatBlock from '../components/StatBlock.vue';
+import { CHALLENGE_RATINGS, CREATURE_TYPES, SIZES } from '../utils/constants';
 const { data } = await useFetch("/api/hello");
 </script>

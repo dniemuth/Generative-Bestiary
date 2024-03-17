@@ -4,16 +4,20 @@
   "type": "module",
   "scripts": {
     "build": "nuxt build",
-    "dev": "nuxt dev",
+    "dev": "nuxt dev --dotenv .env.local",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "postinstall": "nuxt prepare",
+    "env": "vercel env pull",
+    "deploy": "vercel deploy",
+    "link": "vercel link"
   },
   "devDependencies": {
     "@nuxt/devtools": "latest",
-    "@nuxtjs/ionic": "^0.12.1",
-    "nuxt": "^3.7.4",
-    "vue": "^3.3.4",
+    "@nuxtjs/ionic": "^0.13.1",
+    "nuxt": "^3.10.2",
+    "vercel": "^33.5.1",
+    "vue": "^3.4.19",
     "vue-router": "^4.2.5"
   }
 }
